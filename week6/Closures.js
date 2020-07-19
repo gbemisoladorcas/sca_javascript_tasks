@@ -19,3 +19,17 @@ var result = firstResult(2);
 console.log(firstResult(2));
 
 //The result is 5
+
+var a = 1;
+function b() {
+    a = 10;
+    return;
+    function a() {}
+}
+b();
+console.log(a);
+// The result is 1
+
+/*The reason why the result is 1 is because a=1 is a Global scope to function b and a=10 is a local scope to function b
+Javascript console from the local scope to the global scope since a=10 is inside function b which can't be accessible
+then it goes to the global scope which is a=1. */
